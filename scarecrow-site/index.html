@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scarecrow</title>
+    <link rel="canonical" href="http://scarecrow.co.nz/checkout">
+    <base href="http://scarecrow.co.nz/checkout">
+    <meta name="description"
+      content="Local artisanal produce, at 33 Victoria Street East, straight to your doorstep." />
+
+    <meta property="og:url"                content="http://www.scarecrow.co.nz/checkout-form.html">
+    <meta property="og:type"               content="form">
+    <meta property="og:title"              content="Scarecrow Store Checkout">
+    <meta property="og:description"        content="Local artisanal produce, at 33 Victoria Street East, straight to your doorstep." />
+
+    <meta name="twitter:card"              content="summary" />
+    <meta name="twitter:site"              content="@scarecrow_store" />
+    <meta name="twitter:title"             content="Scarecrow Store Checkout" />
+    <meta name="twitter:description"       content="Local artisanal produce, straight to your doorstep." />
+    <title>Checkout</title>
+    <link rel="stylesheet" media="screen" href="styles.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <form class="contact_form" action="" method="post" name="contact_form">
+
+    <ul>
+      <li>
+        <h2>Checkout Information</h2>
+
+        <div>
+          <script>
+            (function() {
+                var cx = '000752157939520189370:zdzx7a90j74';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                '//cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+          </script>
+          <gcse:search></gcse:search>
+        </div>
+
+        <span class="required_notification">* Denotes Required Field</span>
+      </li>
+
+      <li>
+        <label for="id">Name:</label>
+        <input type="text" id="id" name="name">
+      </li>
+
+      <li>
+        <Label for="email">Email Address:</label>
+        <input type="text" name="email">
+        <span class="form_hint">hello@yourname.co.nz</span>
+      </li>
+
+      <li>
+        <input type="checkbox" name="mailinglist" value="join">* Receive specials, events and news<br>
+      </li>
+
+      <li>
+        <label for="tel">Phone number:</label>
+        <input type="tel" name="tel" id="tel">
+      </li>
+
+      <li>
+        <label for="address">Delivery Address:</label>
+        <input type="text" name="address">
+        <span class="form_hint">Street No, Street, Suburb, City, Postcode</span>
+      </li>
+
+      <li>
+        <Label for="Delivery">Delivery Options:</label>
+        <select name="Delivery">
+          <option
+          value="Instruction">Select Delivery Type</option>
+          <option
+          value="Pick-up">Store Pick-up (No charge)</option>
+          <option
+          value="CBD">Auckland CBD $15</option>
+          <option
+          value="Inner">Auckland Inner Suburbs $18</option>
+          <option
+          value="Outer">Auckland Outer Suburbs $22</option>
+          <option="Nationwide">Nationwide $35</option>
+        </select>
+      </li>
+
+      <li>
+        <Label for="date">Preferred delivery or pickup time:</label>
+        <input id="date" name="date" type="date">
+        <input id="time" name="time" type="time">
+      </li>
+
+      <li>
+        <label for="message">Delivery instructions:</label>
+        <textarea name="message" cols="40" rows="1"/>
+      </li>
+
+      <br>
+      <button class="submit" type="submit">Submit Form</button>
+
+</form>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
