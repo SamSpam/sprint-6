@@ -1,30 +1,23 @@
-import { addIndex, indexOf, map } from 'ramda'
+import { append, contains } from 'ramda'
 
-const makeBoard = function (moves) {
-  const mapIndexed = addIndex(map)
-
-  const getCellFromMove = function (square) {
-    const idx = indexOf(square, moves)
-
-    if (idx === -1) {
-      return '<div class="e">&nbsp;</div>'
-    } else if (idx % 2 === 0) {
-      return '<div class="x">X</div>'
-    } else {
-      return '<div class="o">O</div>'
-    }
+const makeMove = function (cell, moves) {
+  if (contains(cell, moves)) {
+    return moves
+  } else {
+    return append(cell, moves)
   }
-
-  return mapIndexed((_, square) => getCellFromMove(square), new Array(9))
 }
 
-const renderBoard = function (moves) {
-  let board = document.createElement('div')
-
-  board.setAttribute('class', 'board')
-  board.innerHTML = makeBoard(moves).join('')
-
-  document.getElementById('app').appendChild(board)
-}
-
-renderBoard([4,3,0])
+console.log(
+  makeMove(
+    5, makeMove(
+      3, makeMove(
+        0, makeMove(
+          3, makeMove(
+            4, []
+          )
+        )
+      )
+    )
+  ).join("")
+)
