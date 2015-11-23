@@ -3,17 +3,28 @@ import { addIndex, indexOf, map } from 'ramda'
 const makeBoard = function (moves) {
   const mapIndexed = addIndex(map)
 
-  const getPlayerFromMove = function (square) {
+  const getCellFromMove = function (square) {
     const idx = indexOf(square, moves)
 
     if (idx === -1) {
-      return ''
+      return '<div class="e">&nbsp;</div>'
+    } else if (idx % 2 === 0) {
+      return '<div class="x">X</div>'
     } else {
-      return (idx % 2 === 0) ? 'X' : 'O'
+      return '<div class="o">O</div>'
     }
   }
 
-  return mapIndexed((_, idx) => getPlayerFromMove(idx), new Array(9))
+  return mapIndexed((_, square) => getCellFromMove(square), new Array(9))
 }
 
-console.log('The board: ' + makeBoard([4, 3, 0, 8, 2, 1, 6]))
+const renderBoard = function (moves) {
+  let board = document.createElement('div')
+
+  board.setAttribute('class', 'board')
+  board.innerHTML = makeBoard(moves).join('')
+
+  document.getElementById('app').appendChild(board)
+}
+
+renderBoard([4,3,0])
