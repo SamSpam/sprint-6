@@ -1,23 +1,25 @@
-import { append, contains } from 'ramda'
+import $ from 'jquery'
 
-const makeMove = function (cell, moves) {
-  if (contains(cell, moves)) {
-    return moves
-  } else {
-    return append(cell, moves)
+const played = function (el) {
+  return $(el).html() !== ''
+}
+
+const whoMovesNow = function (cells) {
+  const n = cells.filter((idx, el) => played(el)).length
+  return (n % 2 === 0) ? 'x' : 'o'
+}
+
+const makeMove = function (e) {
+  const el = $(e.target)
+
+  if (!played(e.target)) {
+    const cells = $('.board > div')
+    const player = whoMovesNow(cells)
+
+    el.removeClass('empty')
+    el.addClass('player-' + player)
+    el.html(player)
   }
 }
 
-console.log(
-  makeMove(
-    5, makeMove(
-      3, makeMove(
-        0, makeMove(
-          3, makeMove(
-            4, []
-          )
-        )
-      )
-    )
-  ).join("")
-)
+$('#app').on('click', '.board > div', makeMove)

@@ -4,9 +4,9 @@
   width: 300px;
 }
 
-.e,
-.o,
-.x {
+.empty,
+.player-o,
+.player-x {
   border: 1px solid #eee;
   float: left;
   font-size: 80px;
@@ -14,8 +14,9 @@
   height: 98px;
   line-height: 98px;
   text-align: center;
+  text-transform: uppercase;
   width: 98px;
 }
 
-.o { color: ForestGreen; }
-.x { color: DarkRed; }
+.player-o { color: ForestGreen; }
+.player-x { color: DarkRed; }
