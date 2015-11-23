@@ -1,23 +1,18 @@
-import { filter } from 'ramda'
+import { indexOf } from 'ramda'
 
-const isAWin = function (board, player, win) {
-  let playersSquares = filter((square) => board[square] === player, win)
+const getPlayerFromMove = function (square) {
+  const moves = [4, 3, 0, 8, 2, 1, 6]
+  const idx = indexOf(square, moves)
 
-  return playersSquares.length === win.length
+  if (idx === -1) {
+    return ''
+  } else {
+    return (idx % 2 === 0) ? 'X' : 'O'
+  }
 }
 
-const playerWins = function (board, player) {
-  const wins = [
-    [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
-    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]
-  ]
-
-  let winningRows = filter((win) => isAWin(board, player, win), wins)
-
-  return winningRows.length > 0
-}
-
-const winner = ['X', 'O', 'X', 'O', 'X', '', 'X', '', 'O']
-
-console.log("Is O a winner? " + playerWins(winner, 'O'))
-console.log("Is X a winner? " + playerWins(winner, 'X'))
+console.log("What's in cell 4 (center)? " + getPlayerFromMove(4))
+console.log("What's in cell 3 (middle left)? " + getPlayerFromMove(3))
+console.log("What's in cell 1 (center top)? " + getPlayerFromMove(1))
+console.log("What's in cell 2 (top right)? " + getPlayerFromMove(2))
+console.log("What's in cell 2 (middle right)? " + getPlayerFromMove(5))
