@@ -5,8 +5,8 @@
 }
 
 .empty,
-.player-o,
-.player-x {
+.player-O,
+.player-X {
   border: 1px solid #eee;
   float: left;
   font-size: 80px;
@@ -18,5 +18,5 @@
   width: 98px;
 }
 
-.player-o { color: ForestGreen; }
-.player-x { color: DarkRed; }
+.player-O { color: ForestGreen; }
+.player-X { color: DarkRed; }
